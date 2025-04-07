@@ -51,7 +51,6 @@ homebrew_installed_packages:
   - nmap
   - node
   - nvm
-  - php
   - pngpaste
   - ssh-copy-id
   - readline
@@ -65,17 +64,14 @@ homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
   - docker
-  - dropbox
   - firefox
-  - google-chrome
-  - handbrake
   - licecap
   - sequel-ace
-  - slack
-  - sublime-text
   - transmit
+  - bitwarden
+  - visual-studio-code
+  - rectangle
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps: []
