@@ -1,0 +1,32 @@
+- name: Install brew packages
+  community.general.homebrew:
+    name: "{{ ani_cli.required_brew_packages }}"
+    state: present
+
+- name: Install brew cask packages
+  community.general.homebrew:
+    name: "homebrew/cask/{{ item }}"
+    state: present
+  loop: "{{ ani_cli.required_brew_cask_packages }}"
+
+- name: Clone ani-cli git repository ro temp directory
+  ansible.builtin.git:
+    repo: https://github.com/pystardust/ani-cli.git
+    dest: "{{ ani_cli.dir }}"
+    depth: 1
+
+- name: Get brew prefix path
+  ansible.builtin.shell: "brew --prefix"
+  register: brew_prefix
+
+- name: Copy ani-cli binary
+  become: true
+  ansible.builtin.copy:
+    src: "{{ ani_cli.dir }}/ani-cli"
+    dest: "{{ brew_prefix.stdout }}/bin/ani-cli"
+    mode: +x
+
+- name: Delete temp directory
+  ansible.builtin.file:
+    path: "{{ ani_cli.dir }}"
+    state: absent

@@ -1,0 +1,16 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for bongofriend.extras
+
+ani_cli:
+  dir: /tmp/ani-cli
+  required_brew_packages:
+    - curl
+    - grep
+    - aria2
+    - ffmpeg
+    - git
+    - fzf
+    - yt-dlp
+  required_brew_cask_packages:
+    - iina

@@ -2,5 +2,6 @@
 .DS_Store
 .ansible
 *.retry
-roles*
+roles/geerlingguy.dotfiles
+roles/elliotweiser.osx-command-line-tools
 config.yml
