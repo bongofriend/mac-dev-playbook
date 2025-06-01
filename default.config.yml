@@ -59,6 +59,10 @@ homebrew_installed_packages:
   - wget
   - wrk
   - zsh-history-substring-search
+  - neovim
+  - lazygit
+  - lazydocker
+  - zellij
 
 homebrew_taps: []
 
@@ -72,6 +76,7 @@ homebrew_cask_apps:
   - bitwarden
   - visual-studio-code
   - rectangle
+  - alacritty
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps: []
